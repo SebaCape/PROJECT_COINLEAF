@@ -63,4 +63,10 @@ public class Crypto
     {
         return priceAtPurchase;
     }
+
+    @Override
+    public String toString()
+    {
+        return ("Name: " + name + "\nQuantity: " + quantity + "\nValue Per Unit At Purchase: " + priceAtPurchase + "\n");
+    }
 }
