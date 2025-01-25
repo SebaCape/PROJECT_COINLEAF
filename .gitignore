@@ -1,0 +1,11 @@
+/build/
+/.gradle/
+*.class
+*.log
+*.jar
+*.war
+.vscode/
+gradle/wrapper/gradle-wrapper.properties
+gradlew
+gradlew.bat
+gradle/gradle-daemon-jvm.properties

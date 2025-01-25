@@ -1,3 +1,5 @@
+package com.sebacape;
+
 import java.util.Scanner;
 /*
  * Driver class for console based application.

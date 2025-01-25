@@ -1,3 +1,5 @@
+package com.sebacape;
+
 /**
  * Cryptocurrency object class with relevant fields and methods.
  * Implemented for console based portfolio prototype. 
