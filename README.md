@@ -6,7 +6,7 @@ web application with CRUD functionality instead, as I believe it will more effic
 and broadly strengthen my abilities as a software developer.
 
 This project will allow the management of an online cryptocurrency portfolio, leveraging
-the CoinGecko API. I will have the opportunity to learn about databeses, RESTful APIs, 
+the CoinGecko API. I will have the opportunity to learn about databases, RESTful APIs, 
 App Deployment and Hosting, and the interaction of front and backend technologies.
 More specifically, I will gain hands on experience with technologies such as AWS, MySQL,
 Spring Boot, Thymeleaf, Java, CSS, Bootstrap, Jackson, HTML, Gradle, and Postman.
