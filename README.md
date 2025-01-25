@@ -9,4 +9,4 @@ This project will allow the management of an online cryptocurrency portfolio, le
 the CoinGecko API. I will have the opportunity to learn about databeses, RESTful APIs, 
 App Deployment and Hosting, and the interaction of front and backend technologies.
 More specifically, I will gain hands on experience with technologies such as AWS, MySQL,
-Spring Boot, Thymeleaf, Java, CSS, HTML, Gradle, and Postman.
+Spring Boot, Thymeleaf, Java, CSS, Bootstrap, Jackson, HTML, Gradle, and Postman.
