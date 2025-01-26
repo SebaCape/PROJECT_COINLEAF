@@ -13,11 +13,16 @@ public class Crypto
     private double priceAtPurchase;
 
     /*
-     * Constructor for Cryptocurrency object
+     * Empty default constructor for Cryptocurrency object. Necessary for Jackson.
+     */
+    public Crypto() {}
+
+    /*
+     * Constructor for Crypto object
      * 
-     * @param n The name of the Cryptocurrency
-     * @param q The quantity of the Cryptocurrency
-     * @param p The price at which the Cryptocurrency was bought
+     * @param n The name of the Crypto
+     * @param q The quantity of the Crypto
+     * @param p The price at which the Crypto was bought
      */
     public Crypto(String n, double q, double p)
     {
@@ -27,9 +32,9 @@ public class Crypto
     }
 
     /* 
-     * Returns the name of the Cryptocurrency.
+     * Returns the name of the Crypto.
      * 
-     * @return the name of the Cryptocurrency.
+     * @return the name of the Crypto.
      */
     public String getName()
     {
@@ -37,9 +42,9 @@ public class Crypto
     }
 
     /*
-     * Returns the quantity of the Cryptocurrency.
+     * Returns the quantity of the Crypto.
      * 
-     * @return the quantity of the Cryptocurrency.
+     * @return the quantity of the Crypto.
      */
     public double getQuantity()
     {
@@ -47,9 +52,9 @@ public class Crypto
     }
 
     /*
-     * Sets the quantity of the Cryptocurrency.
+     * Sets the quantity of the Crypto.
      * 
-     * @param q new quantity of Cryptocurrency to be set.
+     * @param q new quantity of Crypto to be set.
      */
     public void setQuantity(double q)
     {
@@ -57,15 +62,20 @@ public class Crypto
     }
 
     /*
-     * Returns the price at which the Cryptocurrency was purchased.
+     * Returns the price at which the Crypto was purchased.
      * 
-     * @return the price at which the Crypto currency was purchased.
+     * @return the price at which the Crypto was purchased.
      */
     public double getPriceAtPurchase()
     {
         return priceAtPurchase;
     }
 
+    /*
+     * ToString override method for Crypto object.
+     * 
+     * @return Crypto in string format.
+     */
     @Override
     public String toString()
     {
