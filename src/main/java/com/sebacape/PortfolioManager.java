@@ -1,7 +1,11 @@
 package com.sebacape;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 /*
  * Class to allow temporary in-memory storage of Cryptocurrency portfolio with
  * list-based implementation. Allows all CRUD functionality within the console.
@@ -18,6 +22,45 @@ public class PortfolioManager
     }
 
     /*
+     * Save a portfolio to a JSON file given a file path.
+     * 
+     * @param filePath path to portfolio file to be saved.
+     */
+    public void saveToFile(String filePath) 
+    {
+        ObjectMapper mapper = new ObjectMapper();
+        try 
+        {
+            mapper.writerWithDefaultPrettyPrinter().writeValue(new File(filePath), this.portfolio);
+            System.out.println("Portfolio saved successfully!");
+        } 
+        catch (IOException e) 
+        {
+            System.err.println("Failed to save portfolio: " + e.getMessage());
+        }
+    }
+
+    /*
+     * Load a portfolio from a JSON file given a file path.
+     * 
+     * @param filePath path to portfolio file to be loaded.
+     */
+    public void loadFromFile(String filePath) 
+    {
+        ObjectMapper mapper = new ObjectMapper();
+        try 
+        {
+            Crypto[] cryptos = mapper.readValue(new File(filePath), Crypto[].class);
+            this.portfolio = new ArrayList<>(List.of(cryptos));
+            System.out.println("Portfolio loaded successfully!");
+        } 
+        catch (IOException e) 
+        {
+            System.err.println("Failed to load portfolio: " + e.getMessage());
+        }
+    }
+
+    /*
      * Add a Cryptocurrency to the portfolio.
      * 
      * @param crypto Cryptocurrency to be added to portfolio.
@@ -26,6 +69,16 @@ public class PortfolioManager
     {
         portfolio.add(crypto);
         System.out.println(crypto.getName() + " added to the portfolio.");
+    }
+
+    /*
+     * Getter method for given portfolio object.
+     * 
+     * @return this PortfolioManager's portfolio.
+     */
+    public List<Crypto> getPortfolio() 
+    {
+        return portfolio;
     }
 
     /*

@@ -13,6 +13,7 @@ public class Main
         // Initialization of input reading and portfolio management objects
         PortfolioManager manager = new PortfolioManager();
         Scanner scanner = new Scanner(System.in);
+        String filePath = "portfolio.json";
 
         while (true) 
         {
@@ -21,7 +22,9 @@ public class Main
             System.out.println("2. View Portfolio");
             System.out.println("3. Update Cryptocurrency");
             System.out.println("4. Remove Cryptocurrency");
-            System.out.println("5. Exit");
+            System.out.println("5. Save Portfolio");
+            System.out.println("6. Load Portfolio");
+            System.out.println("7. Exit");
             System.out.print("Enter your choice: ");
             
             // Read input for switch statement
@@ -61,9 +64,15 @@ public class Main
                     String removeName = scanner.nextLine();
                     manager.removeCrypto(removeName);
                     break;
+                case 5:
+                    manager.saveToFile(filePath);
+                    break;
+                case 6:
+                    manager.loadFromFile(filePath);
+                    break;
 
                 // Close program
-                case 5:
+                case 7:
                     System.out.println("Exiting...");
                     scanner.close();
                     return;
