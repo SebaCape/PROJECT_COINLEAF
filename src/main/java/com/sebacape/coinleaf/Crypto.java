@@ -1,4 +1,4 @@
-package com.sebacape;
+package com.sebacape.coinleaf;
 
 /**
  * Cryptocurrency object class with relevant fields and methods.

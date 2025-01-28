@@ -1,4 +1,4 @@
-package com.sebacape;
+package com.sebacape.coinleaf;
 
 import java.io.File;
 import java.io.IOException;
