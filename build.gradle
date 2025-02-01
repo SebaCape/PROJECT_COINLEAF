@@ -2,7 +2,6 @@ plugins //Plugins for gradle tasks
 {
     id 'java'
     id 'application'
-    id 'com.github.johnrengelman.shadow' version '8.1.1'
     id 'org.springframework.boot' version '3.1.4'
     id 'io.spring.dependency-management' version '1.1.3'
 }
@@ -17,6 +16,8 @@ dependencies
     implementation 'org.springframework.boot:spring-boot-starter-web' //Web app support
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2' //Jackson library for lightweight JSON processing
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa' //Database interaction support
+    runtimeOnly 'com.h2database:h2' //H2 in memory database for API testing
+
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test' //Testing framework
 }

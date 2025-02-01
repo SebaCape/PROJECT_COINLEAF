@@ -1,19 +1,27 @@
-package com.sebacape.coinleaf;
+package com.sebacape.coinleaf.model;
 
+import jakarta.persistence.*;
 /**
  * Cryptocurrency object class with relevant fields and methods.
  * Implemented for console based portfolio prototype. 
  * 
  * @author Sebastian Capellan
  */
+
+@Entity
+@Table (name = "crypto")
 public class Crypto
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String name;
     private double quantity;
-    private double priceAtPurchase;
+    private double price;
 
     /*
-     * Empty default constructor for Cryptocurrency object. Necessary for Jackson.
+     * Empty default constructor for Cryptocurrency object. Necessary for JPA.
      */
     public Crypto() {}
 
@@ -28,7 +36,26 @@ public class Crypto
     {
         name = n;
         quantity = q;
-        priceAtPurchase = p;
+        price = p;
+    }
+
+    /* 
+     * Returns the ID of the Crypto.
+     * 
+     * @return the ID of the Crypto.
+     */
+    public Long getId() 
+    {
+        return id;
+    }
+
+    /* 
+     * Sets the ID of the Crypto.
+     * 
+     * @param id the new ID of the Crypto.
+     */
+    public void setId(Long id) {
+        this.id = id;
     }
 
     /* 
@@ -68,7 +95,7 @@ public class Crypto
      */
     public double getPriceAtPurchase()
     {
-        return priceAtPurchase;
+        return price;
     }
 
     /*
@@ -79,6 +106,6 @@ public class Crypto
     @Override
     public String toString()
     {
-        return ("Name: " + name + "\nQuantity: " + quantity + "\nValue Per Unit At Purchase: " + priceAtPurchase + "\n");
+        return ("Name: " + name + "\nQuantity: " + quantity + "\nValue Per Unit At Purchase: " + price+ "\n");
     }
 }
