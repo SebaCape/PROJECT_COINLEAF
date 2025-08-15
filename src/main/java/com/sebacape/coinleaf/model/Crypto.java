@@ -1,5 +1,7 @@
 package com.sebacape.coinleaf.model;
 
+import org.hibernate.type.descriptor.jdbc.DecimalJdbcType;
+
 import jakarta.persistence.*;
 /**
  * Cryptocurrency object class with relevant fields and methods.
@@ -26,7 +28,7 @@ public class Crypto
     public Crypto() {}
 
     /*
-     * Constructor for Crypto object
+     * Constructor for Crypto object.
      * 
      * @param n The name of the Crypto
      * @param q The quantity of the Crypto
@@ -96,6 +98,16 @@ public class Crypto
     public double getPriceAtPurchase()
     {
         return price;
+    }
+
+    /*
+     * Sets the price at which the Crypto was purchased.
+     * 
+     * @param the price at which the Crypto was purchased.
+     */
+    public void setPriceAtPurchase(double p)
+    {
+        price = p;
     }
 
     /*

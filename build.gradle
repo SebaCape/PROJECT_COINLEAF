@@ -17,6 +17,7 @@ dependencies
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2' //Jackson library for lightweight JSON processing
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa' //Database interaction support
     implementation 'mysql:mysql-connector-java:8.0.33' //MySQL database implementation for data persistence
+    implementation 'io.github.cdimascio:dotenv-java:3.0.0' //.env support for sensitive variables like database credentials & API key
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test' //Testing framework
 }
