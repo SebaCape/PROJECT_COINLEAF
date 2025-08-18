@@ -61,23 +61,26 @@ The project emphasizes **modular design and scalability**, evolving from a conso
 ## 5. Project Architecture
 crypto-tracker/
 ├── src/
-│   ├── main/
-│   │   ├── java/com/sebacape/coinleaf/
-│   │   │   ├── controller/      #REST controllers
-│   │   │   ├── model/           #Entity classes
-│   │   │   ├── repository/      #JPA repositories
-│   │   │   ├── service/         #Business logic & API services
-│   │   │   ├── util/            #Utility classes
-│   │   │   ├── exception/       #Custom exceptions
-│   │   │   └── CoinLeafApplication.java
-│   │   ├── resources/
-│   │   │   ├── static/          #CSS, JS, images
-│   │   │   ├── templates/       #Thymeleaf templates
-│   │   │   ├── application.properties
-│   │   │   └── data.sql
-├── build.gradle    #Build configuration
-├── README.md                     #Project documentation
-└── logs/                         #Application logs
+│ └── main/
+│ ├── java/
+│ │ └── com/
+│ │ └── sebacape/
+│ │ └── coinleaf/
+│ │ ├── controller/ # REST controllers
+│ │ ├── model/ # Entity classes
+│ │ ├── repository/ # JPA repositories
+│ │ ├── service/ # Business logic & API services
+│ │ ├── util/ # Utility classes
+│ │ ├── exception/ # Custom exceptions
+│ │ └── CoinLeafApplication.java
+│ └── resources/
+│ ├── static/ # CSS, JS, images
+│ ├── templates/ # Thymeleaf templates
+│ ├── application.properties
+│ └── data.sql
+├── build.gradle or pom.xml # Build configuration
+├── README.md # Project documentation
+└── logs/ # Application logs
 
 
 This project is open-source under MIT License.
