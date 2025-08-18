@@ -14,15 +14,17 @@ import java.util.List;
 public class CryptoService 
 {
     private final CryptoRepository repository;
+    private final CoinbaseService coinbaseService;
 
     /*
      * Constructor for CryptoService class.
      * 
      * @param repository Repository to be initialized for services.
      */
-    public CryptoService(CryptoRepository repository) 
+    public CryptoService(CryptoRepository repository, CoinbaseService coinbaseService) 
     {
         this.repository = repository;
+        this.coinbaseService = coinbaseService;
     }
 
     /*
@@ -42,6 +44,8 @@ public class CryptoService
      */
     public Crypto saveCrypto(Crypto crypto) 
     {
+        double currentPrice = coinbaseService.getCurrentPrice(crypto.getSymbol());
+        crypto.setCurrentPrice(currentPrice); 
         return repository.save(crypto);
     }
 

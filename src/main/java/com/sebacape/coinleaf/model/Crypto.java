@@ -18,9 +18,10 @@ public class Crypto
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String symbol;
     private double quantity;
-    private double price;
+    private double initPrice;
+    private double curPrice;
 
     /*
      * Empty default constructor for Cryptocurrency object. Necessary for JPA.
@@ -30,21 +31,22 @@ public class Crypto
     /*
      * Constructor for Crypto object.
      * 
-     * @param n The name of the Crypto
+     * @param s The sympol of the Crypto
      * @param q The quantity of the Crypto
      * @param p The price at which the Crypto was bought
      */
-    public Crypto(String n, double q, double p)
+    public Crypto(String s, double q, double p)
     {
-        name = n;
+        symbol = s;
         quantity = q;
-        price = p;
+        initPrice = p;
+        curPrice = p;
     }
 
     /* 
      * Returns the ID of the Crypto.
      * 
-     * @return the ID of the Crypto.
+     * @return Long the ID of the Crypto.
      */
     public Long getId() 
     {
@@ -63,17 +65,17 @@ public class Crypto
     /* 
      * Returns the name of the Crypto.
      * 
-     * @return the name of the Crypto.
+     * @return String the name of the Crypto.
      */
-    public String getName()
+    public String getSymbol()
     {
-        return name;
+        return symbol;
     }
 
     /*
      * Returns the quantity of the Crypto.
      * 
-     * @return the quantity of the Crypto.
+     * @return double the quantity of the Crypto.
      */
     public double getQuantity()
     {
@@ -93,31 +95,51 @@ public class Crypto
     /*
      * Returns the price at which the Crypto was purchased.
      * 
-     * @return the price at which the Crypto was purchased.
+     * @return double the price at which the Crypto was purchased.
      */
     public double getPriceAtPurchase()
     {
-        return price;
+        return initPrice;
     }
 
     /*
      * Sets the price at which the Crypto was purchased.
      * 
-     * @param the price at which the Crypto was purchased.
+     * @param p the price at which the Crypto was purchased.
      */
     public void setPriceAtPurchase(double p)
     {
-        price = p;
+        initPrice = p;
+    }
+
+    /*
+     * Returns the current price of the Crypto.
+     * 
+     * @return double the current price of the Crypto.
+     */
+    public double getCurrentPrice()
+    {
+        return curPrice;
+    }
+
+    /*
+     * Sets the current price of the Crypto.
+     * 
+     * @param p the current price of the Crypto.
+     */
+    public void setCurrentPrice(double p)
+    {
+        curPrice = p;
     }
 
     /*
      * ToString override method for Crypto object.
      * 
-     * @return Crypto in string format.
+     * @return String Crypto in string format.
      */
     @Override
     public String toString()
     {
-        return ("Name: " + name + "\nQuantity: " + quantity + "\nValue Per Unit At Purchase: " + price+ "\n");
+        return ("Name: " + symbol + "\nQuantity: " + quantity + "\nValue Per Unit At Purchase: " + initPrice+ "\n");
     }
 }
