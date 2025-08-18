@@ -1,12 +1,83 @@
-PROJECT COINLEAF
+# CoinLeaf – CRUD Cryptocurrency Tracker
 
-This project is an iteration of my original idea to create a stock analyzer
-with the Wolfram Language. Over time, my attention shifted to building a full-stack
-web application with CRUD functionality instead, as I believe it will more efficiently
-and broadly strengthen my abilities as a software developer.
+## 1. Introduction
+**CoinLeaf** is a web application that allows users to manage their cryptocurrency portfolios. Users can **create, read, update, and delete (CRUD)** cryptocurrency entries and fetch **live cryptocurrency prices** from the Coinbase API.  
 
-This project will allow the management of an online cryptocurrency portfolio, leveraging
-the CoinGecko API. I will have the opportunity to learn about databases, RESTful APIs, 
-App Deployment and Hosting, and the interaction of front and backend technologies.
-More specifically, I will gain hands on experience with technologies such as AWS, MySQL,
-Spring Boot, Thymeleaf, Java, CSS, Bootstrap, Jackson, HTML, Gradle, and Postman.
+The project emphasizes **modular design and scalability**, evolving from a console-based application to a fully functional web application with database persistence and live price updates.
+
+---
+
+## 2. Features
+- **CRUD Operations:** Add, view, update, and delete cryptocurrencies in a portfolio.
+- **Database Integration:** Persistent storage using MySQL with Spring Data JPA.
+- **Live Price Fetching:** Real-time cryptocurrency prices via the Coinbase API.
+- **RESTful API:** Fully functional API endpoints for portfolio management.
+- **Web Interface:** Interactive front-end using Thymeleaf templates.
+- **Extensible Design:** Modular structure for easy addition of new features.
+
+---
+
+## 3. Project Architecture
+
+### Back-End
+- **Java & Spring Boot:** Handles business logic and API endpoints.
+- **Spring Data JPA:** Provides repository interfaces for database interaction.
+- **CoinbaseService:** Fetches live cryptocurrency prices from the Coinbase API.
+
+### Database
+- **MySQL or PostgreSQL:** Stores portfolio data persistently.
+
+### Front-End
+- **Thymeleaf:** Server-side rendering of portfolio pages.
+- **HTML/CSS & Bootstrap:** Responsive and styled user interface.
+
+### Development Tools
+- **Postman:** API testing.
+- **Gradle or Maven:** Build automation and dependency management.
+
+### Deployment
+- Can be deployed on **Heroku** or **AWS**.
+
+---
+
+## 4. API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET`  | `/api/cryptos` | Fetch all cryptocurrencies in the portfolio |
+| `POST` | `/api/cryptos` | Add a new cryptocurrency to the portfolio |
+| `GET`  | `/api/cryptos/{symbol}/price` | Fetch live price of a specific cryptocurrency |
+| `DELETE` | `/api/cryptos/{id}` | Delete a cryptocurrency by its ID |
+
+**Example POST Request Body:**
+```json
+{
+  "symbol": "BTC",
+  "quantity": 3.5,
+  "initPrice": 27000.00,
+  "curPrice": 27000.00
+}
+```
+## 5. Project Architecture
+crypto-tracker/
+├── src/
+│   ├── main/
+│   │   ├── java/com/sebacape/coinleaf/
+│   │   │   ├── controller/      #REST controllers
+│   │   │   ├── model/           #Entity classes
+│   │   │   ├── repository/      #JPA repositories
+│   │   │   ├── service/         #Business logic & API services
+│   │   │   ├── util/            #Utility classes
+│   │   │   ├── exception/       #Custom exceptions
+│   │   │   └── CoinLeafApplication.java
+│   │   ├── resources/
+│   │   │   ├── static/          #CSS, JS, images
+│   │   │   ├── templates/       #Thymeleaf templates
+│   │   │   ├── application.properties
+│   │   │   └── data.sql
+├── build.gradle    #Build configuration
+├── README.md                     #Project documentation
+└── logs/                         #Application logs
+
+
+This project is open-source under MIT License.
