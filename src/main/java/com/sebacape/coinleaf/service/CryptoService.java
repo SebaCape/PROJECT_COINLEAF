@@ -5,6 +5,7 @@ import com.sebacape.coinleaf.repository.CryptoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 /**
  * Cryptocurrency service class meant to handle business logic. 
  * 
@@ -35,6 +36,16 @@ public class CryptoService
     public List<Crypto> getAllCryptos() 
     {
         return repository.findAll();
+    }
+
+    /*
+     * Returns a singular Crypto in the repository based on id.
+     * 
+     * @return Crypto based on id.
+     */
+    public Optional<Crypto> getCryptoById(Long id)
+    {
+        return repository.findById(id);
     }
 
     /*

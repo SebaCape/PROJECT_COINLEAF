@@ -6,6 +6,7 @@ import com.sebacape.coinleaf.service.CryptoService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 /*
  * CryptoController class with the purpose of exposing
  * REST API endpoints for operation access.
@@ -32,6 +33,13 @@ public class CryptoController
     public List<Crypto> getAllCryptos() 
     {
         return cryptoService.getAllCryptos();
+    }
+
+    //Get one Crypto from the service based on id
+    @GetMapping("/{id}")
+    public Optional<Crypto> getCrypto(@PathVariable Long id)
+    {
+        return cryptoService.getCryptoById(id);
     }
 
     //Add a Crypto to the service
